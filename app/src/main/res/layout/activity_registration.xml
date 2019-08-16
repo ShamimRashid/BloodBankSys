@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".Registration">
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="74dp"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay"
+        app:layout_constraintBottom_toTopOf="@+id/firstname"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:fitsSystemWindows="true"
+            app:contentScrim="?attr/colorPrimary"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed"
+            app:toolbarId="@+id/toolbar" />
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/btnadd"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="34dp"
+        android:layout_marginRight="34dp"
+        android:layout_marginBottom="34dp"
+        app:fabSize="auto"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/txtuser"
+        app:layout_constraintTop_toBottomOf="@+id/txtcity"
+        app:srcCompat="@android:drawable/ic_dialog_email"
+        tools:srcCompat="@android:drawable/ic_menu_add" />
+
+    <EditText
+        android:id="@+id/firstname"
+        style="@style/Widget.MaterialComponents.TextInputEditText.FilledBox.Dense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginBottom="38dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="First Name"
+        app:layout_constraintBottom_toTopOf="@+id/lastname"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/lastname"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
+        android:layout_marginBottom="33dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Last Name"
+        app:layout_constraintBottom_toTopOf="@+id/lblradio"
+        app:layout_constraintEnd_toStartOf="@+id/txtaddress"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/firstname" />
+
+    <TextView
+        android:id="@+id/lblradio"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="147dp"
+        android:layout_marginRight="147dp"
+        android:layout_marginBottom="74dp"
+        android:text="Gender"
+        android:textFontWeight="bold"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/txtcontact"
+        app:layout_constraintEnd_toStartOf="@+id/txtcity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lastname" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginLeft="12dp"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/txtcontact"
+        app:layout_constraintEnd_toEndOf="@+id/txtcontact"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtcity">
+
+
+        <RadioButton
+            android:id="@+id/radiof"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Female" />
+
+        <RadioButton
+            android:id="@+id/radiom"
+            android:layout_width="83dp"
+            android:layout_height="wrap_content"
+            android:onClick="onRadioButtonClicked"
+            android:text="Male" />
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/txtcontact"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:inputType="textPostalAddress|phone"
+        android:text="Contact"
+        app:layout_constraintBottom_toTopOf="@+id/txtkin"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lblradio" />
+
+    <EditText
+        android:id="@+id/txtkin"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="18dp"
+        android:ems="10"
+        android:inputType="textMultiLine|phone"
+        android:text="Next of kin"
+        app:layout_constraintBottom_toTopOf="@+id/txtemail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtcontact" />
+
+    <EditText
+        android:id="@+id/txtemail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="Email"
+        app:layout_constraintBottom_toTopOf="@+id/txtuser"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtkin" />
+
+    <EditText
+        android:id="@+id/txtaddress"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="59dp"
+        android:ems="10"
+        android:inputType="textPostalAddress"
+        android:text="Address"
+        app:layout_constraintBottom_toTopOf="@+id/txtcity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lastname"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtcity"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="297dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="City"
+        app:layout_constraintBottom_toTopOf="@+id/btnadd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/lblradio"
+        app:layout_constraintTop_toBottomOf="@+id/txtaddress" />
+
+    <EditText
+        android:id="@+id/txtuser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginRight="91dp"
+        android:layout_marginBottom="76dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Username"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnadd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtemail" />
+
+</android.support.constraint.ConstraintLayout>
